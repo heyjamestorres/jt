@@ -1,47 +1,47 @@
 const nav = document.getElementById('glassNav');
 const navToggle = document.getElementById('navToggle');
 const serviceDetail = document.getElementById('serviceDetail');
-const serviceCards = document.querySelectorAll('.service-card');
+const servicePills = document.querySelectorAll('.service-pill');
+let navPinnedOpen = false;
 
-let manuallyOpen = false;
-function setNavState() {
-  const shouldCollapse = window.scrollY > 80 && !manuallyOpen;
-  nav.classList.toggle('collapsed', shouldCollapse);
+function updateNav() {
+  const scrolled = window.scrollY > 48;
+  nav.classList.toggle('collapsed', scrolled && !navPinnedOpen);
 }
+
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 80) manuallyOpen = false;
-  setNavState();
+  if (window.scrollY <= 48) navPinnedOpen = false;
+  if (window.scrollY > 48 && !nav.matches(':hover')) navPinnedOpen = false;
+  updateNav();
 }, { passive: true });
+
 navToggle.addEventListener('click', () => {
-  if (window.scrollY > 80) {
-    manuallyOpen = nav.classList.contains('collapsed');
-    nav.classList.toggle('collapsed');
+  if (window.scrollY > 48) {
+    navPinnedOpen = nav.classList.contains('collapsed');
+    updateNav();
   }
 });
-setNavState();
 
 document.querySelectorAll('.nav-links a').forEach(link => {
   link.addEventListener('click', () => {
-    manuallyOpen = false;
-    setTimeout(setNavState, 420);
+    navPinnedOpen = false;
+    setTimeout(updateNav, 500);
   });
 });
 
-serviceCards.forEach(card => {
-  card.addEventListener('click', () => {
-    serviceCards.forEach(c => c.classList.remove('active'));
-    card.classList.add('active');
-    serviceDetail.textContent = card.dataset.detail;
+servicePills.forEach(pill => {
+  pill.addEventListener('click', () => {
+    servicePills.forEach(p => p.classList.remove('active'));
+    pill.classList.add('active');
+    serviceDetail.textContent = pill.dataset.detail;
   });
 });
 
-const observer = new IntersectionObserver(entries => {
+const revealObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) entry.target.classList.add('show');
   });
-}, { threshold: 0.12 });
+}, { threshold: 0.16 });
 
-document.querySelectorAll('.section h2,.about-grid p,.service-card,.service-detail,.contact-panel').forEach(el => {
-  el.classList.add('reveal');
-  observer.observe(el);
-});
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+updateNav();

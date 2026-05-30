@@ -1,10 +1,11 @@
-# Just There by James Torres
+# JUST THERE by James Torres
 
-Static GitHub Pages site.
+Static GitHub Pages website.
 
-## Deploy
-1. Create a GitHub repo.
-2. Upload all files in this folder.
-3. Go to Settings > Pages.
-4. Set source to `main` branch, root folder.
-5. Save.
+Upload the files in this folder to the root of your GitHub Pages repo:
+- index.html
+- style.css
+- script.js
+- assets/
+
+Do not upload the ZIP file itself.
