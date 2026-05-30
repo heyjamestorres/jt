@@ -1,13 +1,10 @@
 # Just There by James Torres
 
-Apple-like static website for an independent disability support worker.
+Static GitHub Pages site.
 
-## GitHub Pages setup
-1. Upload these files to a new GitHub repository.
-2. Go to Settings > Pages.
-3. Under Build and deployment, choose Deploy from a branch.
-4. Select main branch and root folder.
-5. Save, then wait for GitHub Pages to publish.
-
-## Edit contact details
-Open `index.html` and update the phone, email, ABN or service areas as needed.
+## Deploy
+1. Create a GitHub repo.
+2. Upload all files in this folder.
+3. Go to Settings > Pages.
+4. Set source to `main` branch, root folder.
+5. Save.

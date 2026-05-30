@@ -1,36 +1,20 @@
-const revealItems = document.querySelectorAll('.reveal');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) entry.target.classList.add('is-visible');
-  });
-}, { threshold: 0.16 });
-revealItems.forEach((item, index) => {
-  item.style.setProperty('--delay', `${Math.min(index * 45, 280)}ms`);
-  observer.observe(item);
-});
-
-const movingItems = document.querySelectorAll('.parallax, .ambient');
-const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-function animateScroll() {
-  if (reduceMotion) return;
-  const y = window.scrollY || 0;
-  movingItems.forEach((item) => {
-    const speed = Number(item.dataset.speed || 0.08);
-    item.style.transform = `translate3d(0, ${y * speed}px, 0)`;
-  });
-}
-window.addEventListener('scroll', animateScroll, { passive: true });
-animateScroll();
-
 const root = document.documentElement;
-function updateIdentityMorph() {
-  if (reduceMotion) {
-    root.style.setProperty('--identity-progress', '1');
-    return;
-  }
-  const y = window.scrollY || 0;
-  const progress = Math.max(0, Math.min(1, y / 170));
-  root.style.setProperty('--identity-progress', progress.toFixed(3));
+const hero = document.querySelector('.hero');
+const dock = document.getElementById('dock');
+const dockLogo = document.getElementById('dockLogo');
+const services = document.querySelectorAll('.service');
+const detail = document.getElementById('serviceDetail');
+let manualOpen = false;
+function clamp(n,min,max){return Math.max(min,Math.min(max,n));}
+function update(){
+  const heroHeight = hero.offsetHeight - innerHeight;
+  const p = clamp(scrollY / heroHeight, 0, 1);
+  root.style.setProperty('--p', p.toFixed(3));
+  if(scrollY > 520 && !manualOpen) dock.classList.add('collapsed');
+  if(scrollY <= 520) { dock.classList.remove('collapsed'); manualOpen = false; }
 }
-window.addEventListener('scroll', updateIdentityMorph, { passive: true });
-updateIdentityMorph();
+addEventListener('scroll', update, {passive:true});
+addEventListener('resize', update);
+dockLogo.addEventListener('click', () => { manualOpen = !manualOpen; dock.classList.toggle('collapsed', !manualOpen && scrollY>520); });
+services.forEach(btn => btn.addEventListener('click', () => { detail.textContent = btn.dataset.detail; }));
+update();
