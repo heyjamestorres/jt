@@ -3,78 +3,76 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Just There by James Torres</title>
-  <meta name="description" content="Independent disability support by James Torres across South East Melbourne and wider Melbourne." />
-  <link rel="icon" href="assets/jt-logo.png" />
+  <title>JUST THERE by James Torres</title>
+  <meta name="description" content="Just There by James Torres. Person-centred support across South East Melbourne and wider Melbourne." />
+  <link rel="preload" href="assets/jt-logo.jpeg" as="image">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="grain"></div>
+  <div class="aurora aurora-one"></div>
+  <div class="aurora aurora-two"></div>
+
   <main>
-    <section id="home" class="hero scene-dark" aria-label="Just There landing">
-      <div class="grain"></div>
-      <div class="stage-lines" aria-hidden="true"></div>
-      <div class="scroll-hint"><span></span>Scroll</div>
-      <div class="hero-lockup" id="heroLockup">
-        <img class="hero-logo" src="assets/jt-logo.png" alt="JT logo" />
-        <div class="wordmark" aria-label="Just There by James Torres">
-          <div class="just-there" aria-hidden="true"><span>JUST</span><span>THERE</span></div>
-          <p>by James Torres</p>
+    <section class="hero" id="home" aria-label="Just There introduction">
+      <div class="hero-stage">
+        <div class="logo-orbit" aria-hidden="true"></div>
+        <div class="brand-reveal" id="brandReveal">
+          <img class="hero-logo" src="assets/jt-logo.jpeg" alt="JT logo for Just There by James Torres">
+          <div class="word-lockup" aria-label="JUST THERE by James Torres">
+            <span class="word just">JUST</span>
+            <span class="word there">THERE</span>
+            <span class="byline">by James Torres</span>
+          </div>
         </div>
+        <p class="tagline">I’m just there,<br>when you need it.</p>
       </div>
-      <div class="hero-copy">
-        <p>Independent disability support.</p>
-        <a href="#contact" class="primary-btn">Get in touch</a>
-      </div>
+      <div class="scroll-cue">Scroll to explore</div>
     </section>
 
-    <section class="reveal-section identity" aria-label="Brand reveal">
-      <div class="light-arc"></div>
-      <div class="identity-lockup">
-        <img src="assets/jt-logo.png" alt="JT logo" />
-        <div>
-          <h1>JUST THERE</h1>
-          <p>by James Torres</p>
-        </div>
+    <section class="section about" id="about">
+      <p class="eyebrow">About</p>
+      <h2>Support with calm, clarity and real presence.</h2>
+      <div class="about-grid">
+        <p>Hi, I’m James. I’m originally from the Philippines, now based in Melbourne, and I provide flexible, person-centred support across South East Melbourne and wider Melbourne.</p>
+        <p>I’m currently studying a Master of Business Information Systems, specialised in Data Analytics. That background helps me stay organised, reliable and practical, especially with routines, planning, technology and day-to-day problem solving.</p>
+        <p>Outside work and study, I enjoy music, church, gym, swimming, walking, cooking, cafés and road trips. I like support that feels natural, respectful and genuinely helpful, not clinical or awkward.</p>
       </div>
     </section>
 
-    <section id="services" class="services" aria-label="Services">
-      <h2>How I can support you</h2>
-      <div class="service-row">
-        <button class="service" data-detail="Personal support with daily routines, simple tasks and day-to-day confidence."><span>⌂</span>Daily Living</button>
-        <button class="service" data-detail="Safe, reliable transport for appointments, activities and community access."><span>▣</span>Transport</button>
-        <button class="service" data-detail="Social outings, errands, cafes, church, shopping and staying connected."><span>○</span>Community</button>
-        <button class="service" data-detail="Walking, light activity and getting out for fresh air at your pace."><span>♧</span>Walking</button>
-        <button class="service" data-detail="Patient tech help for phones, apps, forms, accounts and basic IT training."><span>⌘</span>IT Support</button>
-        <button class="service" data-detail="Appointments, reminders, companionship and calm practical support."><span>♡</span>Companionship</button>
+    <section class="section services" id="services">
+      <p class="eyebrow">Services</p>
+      <h2>Simple support that fits the day.</h2>
+      <div class="service-rings" aria-hidden="true"></div>
+      <div class="service-grid">
+        <button class="service-card" data-detail="Social outings, appointments, errands, shopping and staying connected with the community."><span>🤝</span><strong>Getting out</strong></button>
+        <button class="service-card" data-detail="Safe, practical transport support for appointments, activities and everyday plans."><span>🚗</span><strong>Getting around</strong></button>
+        <button class="service-card" data-detail="Light day-to-day assistance, routines, organisation, companionship and practical support."><span>☕</span><strong>Everyday support</strong></button>
+        <button class="service-card" data-detail="Walks, gentle movement, fresh air, gym-style encouragement and confidence building."><span>🚶</span><strong>Walks & movement</strong></button>
+        <button class="service-card" data-detail="Phone, apps, basic computer help, online forms, digital organisation and practical tech support."><span>💻</span><strong>Tech help</strong></button>
       </div>
-      <p id="serviceDetail" class="service-detail">Tap any service to learn more.</p>
+      <div class="service-detail" id="serviceDetail">Tap a service to see what it can include.</div>
     </section>
 
-    <section id="about" class="about panel">
-      <p class="eyebrow">About James</p>
-      <h2>I’m just there, when you need it.</h2>
-      <p>Flexible, respectful support across South East Melbourne and wider Melbourne.</p>
-      <p class="note">Independent support worker. Not an NDIS registered provider.</p>
-    </section>
-
-    <section id="contact" class="contact panel">
+    <section class="section contact" id="contact">
       <p class="eyebrow">Contact</p>
-      <h2>Simple ways to reach me.</h2>
-      <div class="contact-grid">
-        <a href="tel:0433415858">0433 415 858</a>
+      <h2>Let’s keep it simple.</h2>
+      <div class="contact-panel">
+        <a href="tel:0433415858">Call 0433 415 858</a>
         <a href="mailto:heyjamestorres@icloud.com">heyjamestorres@icloud.com</a>
         <span>ABN 54 852 785 661</span>
+        <small>Non-registered independent support worker. Support can be arranged privately, or through self-managed and plan-managed NDIS participants where suitable.</small>
       </div>
     </section>
   </main>
 
-  <nav class="dock" id="dock" aria-label="Main navigation">
-    <a href="#home" class="active"><span>⌂</span><em>Home</em></a>
-    <a href="#services"><span>⌘</span><em>Services</em></a>
-    <a href="#about"><span>○</span><em>About</em></a>
-    <a href="#contact"><span>✉</span><em>Contact</em></a>
-    <button class="dock-logo" id="dockLogo" aria-label="Expand menu"><img src="assets/jt-logo.png" alt="" /></button>
+  <nav class="glass-nav" id="glassNav" aria-label="Main navigation">
+    <button class="nav-logo" id="navToggle" aria-label="Open menu"><img src="assets/jt-logo.jpeg" alt="JT"></button>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
   </nav>
 
   <script src="script.js"></script>
